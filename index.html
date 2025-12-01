@@ -7,19 +7,34 @@
     <!-- Add Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             keyframes: {
+              shake: {
+                "0%, 100%": { transform: "translateX(0)" },
+                "20%": { transform: "translateX(-5px)" },
+                "40%": { transform: "translateX(5px)" },
+                "60%": { transform: "translateX(-5px)" },
+                "80%": { transform: "translateX(5px)" },
+              },
               leftright: {
                 "0%": { transform: "translateX(0)" },
                 "50%": { transform: "translateX(150px)" },
                 "100%": { transform: "translateX(0)" },
               },
+              bounceCustom: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-30px)" },
+              },
             },
             animation: {
+              shake: "shake 0.3s linear infinite",
               leftright: "leftright 2s ease-in-out infinite",
+              bounceCustom: "bounceCustom 0.8s ease-in-out infinite",
             },
           },
         },
@@ -108,7 +123,7 @@
       <div>
         <img
           src="/image/Illustration (1).png"
-          class="mt-5 w-[32vw] mx-auto"
+          class="mt-5 w-[32vw] mx-auto animate-shake"
           alt=""
         />
       </div>
@@ -163,7 +178,11 @@
 
     <div class="md:flex lg:flex items-center">
       <div>
-        <img src="/image/Frame 35.png" class="mt-5 w-[82vw] mx-auto" alt="" />
+        <img
+          src="/image/Frame 35.png"
+          class="mt-5 w-[82vw] mx-auto animate-bounceCustom"
+          alt=""
+        />
       </div>
       <div class="text-center p-5 items-start flex flex-col">
         <h1 class="text-2xl font-bold text-gray-700">
@@ -226,7 +245,11 @@
 
     <div class="md:flex lg:flex mt-10 p-4">
       <div>
-        <img src="/image/pana.png" class="mt-5 w-[82vw] mx-auto" alt="" />
+        <img
+          src="/image/pana.png"
+          class="mt-5 w-[82vw] mx-auto animate-bounceCustom"
+          alt=""
+        />
       </div>
       <div class="text-center p-5 items-start mt-4 flex flex-col">
         <h1 class="text-2xl text-gray-700 font-bold text-gray-700 text-left">
@@ -250,7 +273,13 @@
     </div>
 
     <div class="md:flex lg:flex mt-10 p-4 bg-slate-200">
-      <div><img src="/image/image 9.png" class="w-[900px]" alt="" /></div>
+      <div>
+        <img
+          src="/image/image 9.png"
+          class="w-[900px] animate-bounceCustom"
+          alt=""
+        />
+      </div>
       <div class="p-5">
         <h1 class="text-sm text-gray-700 font-sans font-medium">
           Maecenas dignissim justo eget nulla rutrum molestia. Maecenas lobortis
